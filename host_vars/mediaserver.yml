@@ -1,0 +1,4 @@
+interface: {{ ansible_default_ip4.interface }}
+dlna_port: 8200
+home:  {{ ansible_env.HOME }}
+

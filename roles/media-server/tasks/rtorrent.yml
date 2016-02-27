@@ -1,0 +1,24 @@
+- name: install rtorrent
+  apt:
+   name={{ item }}
+    with_items:
+     - rtorrent
+     - screen
+   state=present
+- name: create folder for *.torrent and content
+  file: path={{ home }}/{{ item }} state=directory
+  with_items:
+    - mult
+    - mult-torr
+    - show
+    - show-torr
+    - games
+    - games-torr
+    - film
+    - film-torr
+- name: moving rtorrent config file
+  template:
+   src=templcfg/rtorrent.rc.j2
+   dest={{ home }}/.rtorrent.rc
+- name: rtorrent start
+  shell: screen -d -m rtorrent

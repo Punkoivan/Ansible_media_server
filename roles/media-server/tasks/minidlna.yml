@@ -1,0 +1,7 @@
+---   
+- name: install minidlna
+  apt: name=minidlna state=present
+- name: copy config for minidlna
+  template: src=templcfg/minidlna.conf.j2 dest=/etc/minidlna.conf
+- name: restart miniDLAN server
+  service: name=minidlna state=restarted

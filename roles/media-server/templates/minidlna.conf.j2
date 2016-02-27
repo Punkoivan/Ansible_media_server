@@ -1,0 +1,12 @@
+media_dir=V,{{ home }}/film/
+media_dir=V,{{ home }}/show/
+media_dir=V,{{ home }}/mult/
+db_dir=/var/cache/minidlna
+log_dir=/var/log
+network_interface={{ interfaces }}
+port={{ dlna_port }}
+presentation_url=/dlna-server
+inotify=yes
+notify_interval=900
+model_name="MiniDLNA"
+strict_dlna=no
